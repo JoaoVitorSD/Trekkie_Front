@@ -61,7 +61,7 @@ export default function Home() {
             </div>
             <div className={styles['field']}>
               <label className={styles['form-label']} htmlFor="nivel">Nível</label>
-              <select name="nivel">
+              <select className={styles['form-select-categorias']} name="nivel">
                 <option value="iniciante">Iniciante</option>
                 <option value="intermediario">Intermediario</option>
                 <option value="avançado">Avançado</option>
@@ -85,6 +85,10 @@ export default function Home() {
           <div className={styles.card}>
             <label className={styles['card-label']}>Box</label>
             <img className={styles['card-png']} src="box.png"></img>
+          </div>
+            <div className={styles.card}>
+            <label className={styles['card-label']}>Corrida</label>
+            <img className={styles['card-png']} src="corrida.png"></img>
           </div>
         </div>
       </main>
