@@ -27,8 +27,70 @@
 }
 .description{
   margin-left:3px;
+  white-space: nowrap;
   margin-top: 10px;
   color: rgb(230, 230, 230);
+}
+
+.nav{
+  margin-left: 40vw;
+  width: 40vw;
+  height: 100%;
+}
+
+.navlist{
+  width: 100%;
+  display: flex;
+  height: 100%;
+}
+.nav-bar-option{
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  list-style-type:none;
+  transition: .3s ease;
+}
+
+.nav-bar-option:hover{
+  cursor: pointer;
+  color: #918888;
+}
+
+.user-area{
+  display: flex;
+}
+
+.user-area{
+  display: flex;
+}
+
+.user-button{
+  white-space: nowrap;
+  padding: 7px 10px;
+  border: none;
+  margin-right: 20px;
+  text-transform: capitalize;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: .3s ease;
+}
+
+.user-button:hover{
+  color:#ccc;
+}
+.user-button-sign{
+  background: none;
+  color: white;
+}
+
+.user-button-log{
+  background: rgb(37, 124, 3);
+  color: white;
+}
+
+.user-button-log:hover{
+  background: rgb(34, 102, 7);
 }
 .groups-container{
   display: flex;

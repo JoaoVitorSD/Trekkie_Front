@@ -17,6 +17,18 @@ export default function Home() {
       <main className={styles.main}>
         <header className={styles.header}><h4 className={styles.title}>Treekie</h4>
           <div className={styles.description}>Esportes ao ar livre</div>
+        <nav className={styles.nav}>
+          <ul className={styles.navlist}>
+            <li className={styles['nav-bar-option']}>Sobre nós</li>
+            <li className={styles['nav-bar-option']}>Dúvidas</li>
+            <li className={styles['nav-bar-option']}>Suporte</li>
+          </ul>
+        </nav>
+
+        <div className={styles['user-area']}>
+            <button className={`${styles['user-button']} ${styles['user-button-sign']}`}>sign in</button>
+            <button className={`${styles['user-button']} ${styles['user-button-log']}`}>log in</button>
+        </div>
         </header>
 
         <div className={styles['groups-container']}>
