@@ -15,7 +15,7 @@ export default function Home() {
       fetch("http://localhost:8080/categoria/find-all")
       .then( resp => resp.json())
       .then(resp => {
-        setCategoriaOptions(resp.map( (e,i) => <option key={i} value={e.name}>{e.descricao}</option>));
+        setCategoriaOptions(resp.map( (e: any,i:any) => <option key={i} value={e.name}>{e.descricao}</option>));
       })
   },[])
   return (
@@ -27,7 +27,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <header className={styles.header}><a href='http://localhost:3000' className={styles.title}>Treekie</a>
+        <header className={styles.header}><a href='http://localhost:3000' className={styles.title}>Trekkie</a>
           <div className={styles.description}>Esportes ao ar livre</div>
           <nav className={styles.nav}>
             <ul className={styles.navlist}>
@@ -90,6 +90,11 @@ export default function Home() {
             <label className={styles['card-label']}>Corrida</label>
             <img className={styles['card-png']} src="corrida.png"></img>
           </div>
+        </div>
+
+
+        <div className={styles['add-group']}>
+
         </div>
       </main>
 

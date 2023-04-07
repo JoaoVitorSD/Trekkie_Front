@@ -167,6 +167,8 @@
 
 .card:hover{
   cursor: pointer;
+  filter: brightness(0.7);
+  transition: filter .3s ease;
 }
 .card-png{
   height: 20vh;
@@ -184,11 +186,18 @@
   letter-spacing: 1px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 1vh 0;
-  transition: .5s ease;
+  cursor: pointer;
 
 }
-.card-label:hover{
+
+
+.add-group{
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  background: rgb(37, 124, 3);
+  right: 20px;
+  bottom: 20px;
+  border-radius: 20px;
   cursor: pointer;
-  background: black;
-  color: white;
 }
