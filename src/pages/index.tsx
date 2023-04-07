@@ -2,10 +2,22 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import { useEffect, useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const [categoriaOptions, setCategoriaOptions] =  useState([]);
+
+
+  useEffect(()=>{
+      fetch("http://localhost:8080/categoria/find-all")
+      .then( resp => resp.json())
+      .then(resp => {
+        setCategoriaOptions(resp.map( (e,i) => <option key={i} value={e.name}>{e.descricao}</option>));
+      })
+  },[])
   return (
     <>
       <Head>
@@ -15,34 +27,64 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <header className={styles.header}><h4 className={styles.title}>Treekie</h4>
+        <header className={styles.header}><a href='http://localhost:3000' className={styles.title}>Treekie</a>
           <div className={styles.description}>Esportes ao ar livre</div>
-        <nav className={styles.nav}>
-          <ul className={styles.navlist}>
-            <li className={styles['nav-bar-option']}>Sobre nós</li>
-            <li className={styles['nav-bar-option']}>Dúvidas</li>
-            <li className={styles['nav-bar-option']}>Suporte</li>
-          </ul>
-        </nav>
+          <nav className={styles.nav}>
+            <ul className={styles.navlist}>
+              <li className={styles['nav-bar-option']}>Sobre nós</li>
+              <li className={styles['nav-bar-option']}>Dúvidas</li>
+              <li className={styles['nav-bar-option']}>Suporte</li>
+            </ul>
+          </nav>
 
-        <div className={styles['user-area']}>
+          <div className={styles['user-area']}>
             <button className={`${styles['user-button']} ${styles['user-button-sign']}`}>sign in</button>
             <button className={`${styles['user-button']} ${styles['user-button-log']}`}>log in</button>
-        </div>
+          </div>
         </header>
+        <div className="search-form-container">
+          <form className={styles['form-search']}>
+            <div className={styles['field']}>
+              <label className={styles['form-label']}>Categoria</label>
+              <input className={styles['form-input']} type="text" list="categorias" name="categoria"></input>
+              <datalist id="categorias">
+                {categoriaOptions}
+              </datalist>
+            </div>
+            <div className={styles['field']}>
+              <label className={styles['form-label']}>min. participantes</label>
+              <input className={styles['form-input']} type="number" name="minParticipantes" value={0}></input>
+            </div>
+            <div className={styles['field']}>
+              <label className={styles['form-label']}>max. participantes</label>
+              <input className={styles['form-input']} type="number" name="maxParticipantes"></input>
+            </div>
+            <div className={styles['field']}>
+              <label className={styles['form-label']} htmlFor="nivel">Nível</label>
+              <select name="nivel">
+                <option value="iniciante">Iniciante</option>
+                <option value="intermediario">Intermediario</option>
+                <option value="avançado">Avançado</option>
+              </select>
+            </div>
+            <div className={styles['button-container']}>
+              <button className={styles['form-button']}> Buscar </button>
+            </div>
 
+          </form>
+        </div>
         <div className={styles['groups-container']}>
           <div className={styles.card}>
-            <img className={styles['card-png']} src="bike.png"></img>
             <label className={styles['card-label']}>Ciclismo</label>
+            <img className={styles['card-png']} title="ciclismo" src="bike.png"></img>
           </div>
           <div className={styles.card}>
-            <img className={styles['card-png']} src="escalada.png"></img>
             <label className={styles['card-label']}>Escalada</label>
+            <img className={styles['card-png']} src="escalada.png"></img>
           </div>
           <div className={styles.card}>
-            <img className={styles['card-png']} src="box.png"></img>
             <label className={styles['card-label']}>Box</label>
+            <img className={styles['card-png']} src="box.png"></img>
           </div>
         </div>
       </main>
