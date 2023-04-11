@@ -1,0 +1,9 @@
+.modal-container{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background: rgba(0,0,0,0.6);
+}

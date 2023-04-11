@@ -3,21 +3,16 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { useEffect, useState } from 'react'
-
+import Card from 'components/grupo/card'
+import FormCadastro from 'components/grupo/form_cadastro'
+import ListCategorias from '../../components/categoria/data_list_categorias'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
-  const [categoriaOptions, setCategoriaOptions] =  useState([]);
 
+  const [showModal, setShowModal] = useState(false);
 
-  useEffect(()=>{
-      fetch("http://localhost:8080/categoria/find-all")
-      .then( resp => resp.json())
-      .then(resp => {
-        setCategoriaOptions(resp.map( (e: any,i:any) => <option key={i} value={e.name}>{e.descricao}</option>));
-      })
-  },[])
   return (
     <>
       <Head>
@@ -27,7 +22,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <header className={styles.header}><a href='http://localhost:3000' className={styles.title}>Trekkie</a>
+        <header className={styles.header}><a href='http://localhost:3000' className={styles.title}>Trenkkie</a>
           <div className={styles.description}>Esportes ao ar livre</div>
           <nav className={styles.nav}>
             <ul className={styles.navlist}>
@@ -47,9 +42,7 @@ export default function Home() {
             <div className={styles['field']}>
               <label className={styles['form-label']}>Categoria</label>
               <input className={styles['form-input']} type="text" list="categorias" name="categoria"></input>
-              <datalist id="categorias">
-                {categoriaOptions}
-              </datalist>
+              <ListCategorias/>
             </div>
             <div className={styles['field']}>
               <label className={styles['form-label']}>min. participantes</label>
@@ -73,29 +66,9 @@ export default function Home() {
 
           </form>
         </div>
-        <div className={styles['groups-container']}>
-          <div className={styles.card}>
-            <label className={styles['card-label']}>Ciclismo</label>
-            <img className={styles['card-png']} title="ciclismo" src="bike.png"></img>
-          </div>
-          <div className={styles.card}>
-            <label className={styles['card-label']}>Escalada</label>
-            <img className={styles['card-png']} src="escalada.png"></img>
-          </div>
-          <div className={styles.card}>
-            <label className={styles['card-label']}>Box</label>
-            <img className={styles['card-png']} src="box.png"></img>
-          </div>
-            <div className={styles.card}>
-            <label className={styles['card-label']}>Corrida</label>
-            <img className={styles['card-png']} src="corrida.png"></img>
-          </div>
-        </div>
-
-
-        <div className={styles['add-group']}>
-
-        </div>
+        <Card/>
+        <div className={styles['add-group']} onClick={()=> setShowModal(!showModal)}>+</div>
+        {showModal ?<FormCadastro closeModal={ ()=> setShowModal(false)}/> : null}
       </main>
 
     </>

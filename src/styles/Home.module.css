@@ -199,5 +199,10 @@
   right: 20px;
   bottom: 20px;
   border-radius: 20px;
+  font-size: 45px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
