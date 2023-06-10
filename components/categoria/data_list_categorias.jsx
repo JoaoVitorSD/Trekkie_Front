@@ -26,11 +26,6 @@ export default function ListCategorias({ setCategory }) {
           "Atividade de percorrer a pé trilhas e caminhos em meio à natureza.",
       },
       {
-        name: "Futebol",
-        description:
-          "Esporte coletivo jogado com uma bola nos pés, visando marcar gols no time adversário.",
-      },
-      {
         name: "Corrida",
         description:
           "Atividade de correr em diferentes distâncias, seja em trilhas, estradas ou pistas.",
@@ -41,19 +36,9 @@ export default function ListCategorias({ setCategory }) {
           "Esporte que envolve navegar em rios, lagos ou mares utilizando uma canoa ou caiaque.",
       },
       {
-        name: "Tênis",
+        name: "Trilha",
         description:
-          "Esporte individual ou em duplas que envolve rebater uma bola com uma raquete em uma quadra.",
-      },
-      {
-        name: "Vôlei de Praia",
-        description:
-          "Esporte coletivo jogado na areia, onde dois times competem para fazer a bola tocar o chão do campo adversário.",
-      },
-      {
-        name: "Paraquedismo",
-        description:
-          "Atividade de saltar de uma aeronave em voo livre, realizando manobras e planando no ar antes de abrir o paraquedas.",
+          "Esporte que envolve navegar em rios, lagos ou mares utilizando uma canoa ou caiaque.",
       },
     ];
     setCategoryOptions(
