@@ -1,6 +1,6 @@
 import styles from '@/styles/Home.module.css'
 
-export default function Card({label}:any){
+export default function Card({label}){
     return (
            <div className={styles.card}>
             <label className={styles['card-label']}>{label}</label>
