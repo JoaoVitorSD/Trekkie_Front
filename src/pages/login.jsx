@@ -1,4 +1,4 @@
-import Header from "src/pages/header.jsx";
+import Header from "src/components/header.jsx";
 import React, { useState } from "react";
 import styles from "src/styles/Login.module.css";
 
