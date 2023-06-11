@@ -1,5 +1,4 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "src/styles/Header.module.css";
 
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -35,7 +34,7 @@ function Header({isLoggedIn}) {
           </Navbar.Brand>
 
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav" className={styles["dropdown-toggle"]}> 
+          <Navbar.Collapse id="responsive-navbar-nav"> 
             <Nav className="me-auto">
               <Form className="d-flex">
                 <Form.Control
