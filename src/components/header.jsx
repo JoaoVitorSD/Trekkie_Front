@@ -11,7 +11,7 @@ function Header({isLoggedIn}) {
   let expand = "md";
   return (
     <>
-      <Navbar collapseOnSelect expand={`${expand}`} bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand={`${expand}`} bg="dark" variant="dark" fixed="top">
         <Container>
           <Navbar.Brand
               href="#"
