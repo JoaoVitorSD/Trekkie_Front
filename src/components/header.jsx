@@ -19,7 +19,7 @@ export default function Header() {
       </Head>
       <header className={styles.header}>
         <a href="http://localhost:3000" className={styles.title}>
-          Trenkkie
+          Trekkie
         </a>
         <div className={styles.description}>Esportes ao ar livre</div>
         <nav className={styles.nav}>
