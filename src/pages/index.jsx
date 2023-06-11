@@ -99,9 +99,11 @@ export default function Home() {
     return groupName;
   }
 
+  let isLoggedIn = false; // Alterar quando o usuário realizar o login
+
   return (
     <>
-     <Header />
+     <Header isLoggedIn={isLoggedIn} />
       <main className={styles.main}>
         <div className="search-form-container">
           <form className={styles["form-search"]}>
