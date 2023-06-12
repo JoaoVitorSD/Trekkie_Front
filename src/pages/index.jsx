@@ -1,4 +1,6 @@
 import Header from "src/components/header.jsx";
+import FilterSystem from "src/components/filter_system.jsx";
+
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useEffect, useState } from "react";
